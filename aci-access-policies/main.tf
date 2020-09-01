@@ -14,6 +14,7 @@ variable vpc_domain_id {}
 
 locals {
   user_physdom_dn = "uni/phys-phys"
+  hintfpol = "/uni/infra/hintfpol-TF-10g"
 }
 
 provider "aci" {
@@ -60,7 +61,7 @@ resource "aci_vpc_explicit_protection_group" "vpc_domain" {
 resource "aci_pcvpc_interface_policy_group" "vpc_policy_group" {
   name                          = var.vpc_policy_group_name
   relation_infra_rs_lldp_if_pol = aci_lldp_interface_policy.lldp_on.id
-  relation_infra_rs_h_if_pol    = "/uni/infra/hintfpol-TF-10g"
+  relation_infra_rs_h_if_pol    = local.hintfpol
   relation_infra_rs_att_ent_p   = aci_attachable_access_entity_profile.aep_physical_server.id
   lag_t                         = "node"
 }
