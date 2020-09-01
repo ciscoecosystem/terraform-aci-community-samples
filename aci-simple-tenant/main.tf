@@ -1,4 +1,4 @@
-#Use TF_ENV as a prefix for environmental variables
+#Use TF_VAR as a prefix for environmental variables
 variable username {}
 variable password {}
 variable url {}
