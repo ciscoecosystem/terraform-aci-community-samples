@@ -8,28 +8,28 @@ variable vrf       {}
 variable bd_subnet {}
 
 provider "aci" {
-  username = local.username
-  password = local.password
-  url      = local.url
+  username = var.username
+  password = var.password
+  url      = var.url
   insecure = true
 }
 
 resource "aci_tenant" "terraform_ten" {
-  name = local.tenant
+  name = var.tenant
 }
 
 resource "aci_vrf" "vrf1" {
   tenant_dn = aci_tenant.terraform_ten.id
-  name      = local.vrf
+  name      = var.vrf
 }
 
 resource "aci_bridge_domain" "bd1" {
   tenant_dn          = aci_tenant.terraform_ten.id
   relation_fv_rs_ctx = aci_vrf.vrf1.name
-  name               = local.bd
+  name               = var.bd
 }
 
 resource "aci_subnet" "bd1_subnet" {
   bridge_domain_dn = aci_bridge_domain.bd1.id
-  ip               = local.bd_subnet
+  ip               = var.bd_subnet
 }
