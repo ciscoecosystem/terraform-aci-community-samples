@@ -1,6 +1,11 @@
-locals {
-
-}
+#Use TF_ENV as a prefix for environmental variables
+variable username  {}
+variable password  {}
+variable url       {}
+variable tenant    {}
+variable bd        {}
+variable vrf       {}
+variable bd_subnet {}
 
 provider "aci" {
   username = local.username
