@@ -1,0 +1,6 @@
+{
+  "registry.terraform.io/terraform-providers/aci": {
+    "hash": "h1:MAzIALUxCc21NXY70ViIlmbBQMocF+akJb0ZYCXca4w=",
+    "version": "0.3.4"
+  }
+}
