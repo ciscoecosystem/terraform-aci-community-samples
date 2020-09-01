@@ -1,11 +1,5 @@
 locals {
-  username  = "admin"
-  password  = "ins3965!"
-  url       = "https://172.31.186.4"
-  tenant    = "TF-tenant"
-  bd        = "bd-1"
-  vrf       = "vrf-1"
-  bd_subnet = "192.168.10.1/24"
+
 }
 
 provider "aci" {
