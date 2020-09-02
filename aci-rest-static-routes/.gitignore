@@ -1,0 +1,6 @@
+env.sh
+terraform.tfstate*
+.terraform
+rec*
+*.crt
+*.key
