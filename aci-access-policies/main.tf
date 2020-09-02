@@ -1,16 +1,16 @@
 #Use TF_VAR as a prefix for environmental variables
-variable username {}
-variable password {}
-variable url {}
-variable aep_name {}
-variable vpc_policy_group_name {}
-variable port_profile_name {}
-variable port_number {}
-variable switch_profile_name {}
-variable switch_A_id {}
-variable switch_B_id {}
-variable explicit_protection_group_name {}
-variable vpc_domain_id {}
+variable "username" {}
+variable "password" {}
+variable "url" {}
+variable "aep_name" {}
+variable "vpc_policy_group_name" {}
+variable "port_profile_name" {}
+variable "port_number" {}
+variable "switch_profile_name" {}
+variable "switch_A_id" {}
+variable "switch_B_id" {}
+variable "explicit_protection_group_name" {}
+variable "vpc_domain_id" {}
 
 locals {
   user_physdom_dn = "uni/phys-phys"
